@@ -1,4 +1,4 @@
-# beauty_salon_app
+# flutter_custom_animation
 
 A new Flutter project.
 

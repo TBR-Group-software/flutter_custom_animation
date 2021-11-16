@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tbr.beauty_salon_app">
+    package="com.tbr.flutter_custom_animation">
    <application
-        android:label="beauty_salon_app"
+        android:label="flutter_custom_animation"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
