@@ -1,5 +1,5 @@
-import 'package:flutter_custom_animation/domain/entity/category.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_animation/domain/entity/category.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -31,27 +31,21 @@ class _CategoryCardState extends State<CategoryCard>
 
   @override
   Widget build(BuildContext context) {
-    return VisibilityDetector(
-      key: ValueKey<String>(widget.category.id),
-      onVisibilityChanged: (VisibilityInfo visibilityInfo) {
-        _animationController.animateTo(visibilityInfo.visibleFraction);
-      },
-      child: ScaleTransition(
-        scale: _animation,
-        child: Container(
-          width: 80,
-          height: 80,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Center(
-            child: SvgPicture.asset(
-              widget.category.iconPath,
-              fit: BoxFit.scaleDown,
-              width: 32,
-              height: 42.5,
-            ),
+    return ScaleTransition(
+      scale: _animation,
+      child: Container(
+        width: 80,
+        height: 80,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Center(
+          child: SvgPicture.asset(
+            widget.category.iconPath,
+            fit: BoxFit.scaleDown,
+            width: 32,
+            height: 42.5,
           ),
         ),
       ),
