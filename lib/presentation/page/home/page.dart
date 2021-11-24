@@ -130,6 +130,11 @@ class _HomePageState extends State<HomePage> {
                         AppImages.skinCleaner,
                         AppImages.skinCleaner,
                       ],
+                      description:
+                          'Formulated with pure fermented green tea extract in'
+                          ' lieu of distilled water, TonyMoly Chok Chok Green '
+                          'Tea Watery Cream plovides intense hydration'
+                          'without being sticky or too heavy on skin.',
                     ),
                     Product(
                       id: 'id2',
@@ -140,6 +145,11 @@ class _HomePageState extends State<HomePage> {
                         AppImages.skinCleaner,
                         AppImages.skinCleaner,
                       ],
+                      description:
+                          'Formulated with pure fermented green tea extract in'
+                          ' lieu of distilled water, TonyMoly Chok Chok Green '
+                          'Tea Watery Cream plovides intense hydration'
+                          'without being sticky or too heavy on skin.',
                     ),
                     Product(
                       id: 'id3',
@@ -150,6 +160,11 @@ class _HomePageState extends State<HomePage> {
                         AppImages.skinCleaner,
                         AppImages.skinCleaner,
                       ],
+                      description:
+                          'Formulated with pure fermented green tea extract in'
+                          ' lieu of distilled water, TonyMoly Chok Chok Green '
+                          'Tea Watery Cream plovides intense hydration'
+                          'without being sticky or too heavy on skin.',
                     ),
                   ],
                 ),
