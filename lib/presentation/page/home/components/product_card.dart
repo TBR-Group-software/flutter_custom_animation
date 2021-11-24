@@ -1,8 +1,10 @@
-import 'package:flutter_custom_animation/domain/entity/product.dart';
-import 'package:flutter_custom_animation/presentation/page/home/components/image_with_blur.dart';
-import 'package:flutter_custom_animation/presentation/page/home/components/product_top_info.dart';
-import 'package:flutter_custom_animation/presentation/theme/palette.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_animation/domain/entity/product.dart';
+import 'package:flutter_custom_animation/presentation/page/home/components/product_image.dart';
+import 'package:flutter_custom_animation/presentation/page/home/components/product_top_info.dart';
+import 'package:flutter_custom_animation/presentation/page/product/page.dart';
+import 'package:flutter_custom_animation/presentation/theme/palette.dart';
+import 'package:flutter_custom_animation/presentation/widget/page_route.dart';
 
 class ProductCard extends StatefulWidget {
   final bool selected;
@@ -43,46 +45,49 @@ class _ProductCardState extends State<ProductCard>
       child: ScaleTransition(
         scale: _scaleAnimation,
         alignment: Alignment.bottomRight,
-        child: Container(
-          width: 238,
-          height: 375,
-          margin: const EdgeInsets.only(bottom: 30),
-          padding: const EdgeInsets.all(29),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(28),
-            boxShadow: <BoxShadow>[
-              if (widget.selected)
-                const BoxShadow(
-                    color: AppPalette.liteRedWithOpacity,
-                    offset: Offset(0, 10),
-                    blurRadius: 15),
-            ],
-            color: Colors.white,
-          ),
-          child: Column(
-            children: <Widget>[
-              ProductCardTopInfo(
-                product: widget.product,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              AppPageRoute<Widget>(
+                builder: (_) => ProductPage(
+                  product: widget.product,
+                ),
               ),
-              const SizedBox(
-                height: 17,
-              ),
-              Stack(
-                alignment: Alignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, top: 40),
-                    child: ImageWithBlur(image: widget.product.images.first),
+            );
+          },
+          child: Container(
+            width: 238,
+            height: 375,
+            margin: const EdgeInsets.only(bottom: 30),
+            padding: const EdgeInsets.all(29),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(28),
+              boxShadow: <BoxShadow>[
+                if (widget.selected)
+                  const BoxShadow(
+                      color: AppPalette.liteRedWithOpacity,
+                      offset: Offset(0, 10),
+                      blurRadius: 15),
+              ],
+              color: Colors.white,
+            ),
+            child: Column(
+              children: <Widget>[
+                ProductCardTopInfo(
+                  product: widget.product,
+                ),
+                const SizedBox(
+                  height: 17,
+                ),
+                SizedBox(
+                  width: 190,
+                  height: 240,
+                  child: ProductImage(
+                    product: widget.product,
                   ),
-                  Image.asset(
-                    widget.product.images.first,
-                    width: 190,
-                    height: 240,
-                    fit: BoxFit.scaleDown,
-                  ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
