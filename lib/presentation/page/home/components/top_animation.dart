@@ -49,22 +49,28 @@ class _TopInfoAnimationState extends State<TopInfoAnimation>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SlideTransition(
-        position: _curvedSlide.drive(
-          Tween<Offset>(
-            begin: const Offset(0.1, 0),
-            end: const Offset(0, 0),
-          ),
+    return SlideTransition(
+      position: _curvedSlide.drive(
+        Tween<Offset>(
+          begin: const Offset(0.1, 0),
+          end: const Offset(0, 0),
         ),
-        child: ScaleTransition(
-          scale: _scaleController,
-          child: FadeTransition(
-            opacity: _opacityController,
-            child: widget.child,
-          ),
+      ),
+      child: ScaleTransition(
+        scale: _scaleController,
+        child: FadeTransition(
+          opacity: _opacityController,
+          child: widget.child,
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _scaleController.dispose();
+    _slideController.dispose();
+    _opacityController.dispose();
+    super.dispose();
   }
 }
