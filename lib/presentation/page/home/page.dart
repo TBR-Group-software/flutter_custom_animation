@@ -28,147 +28,152 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppPalette.litePink,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              const Center(
-                child: LogoCircle(),
-              ),
-              const SizedBox(
-                height: 27,
-              ),
-              TopInfoAnimation(
-                child: SearchBar(),
-              ),
-              const SizedBox(
-                height: 27,
-              ),
-              TopInfoAnimation(
-                onAnimationFinish: () {
-                  setState(() {
-                    _isTopInfoAnimationFinished = true;
-                  });
-                },
-                child: CategoriesView(
-                  categories: <Category>[
-                    Category(
-                      id: 'id1',
-                      name: 'name',
-                      iconPath: AppIcons.earTips,
-                    ),
-                    Category(
-                      id: 'id2',
-                      name: 'name',
-                      iconPath: AppIcons.pills,
-                    ),
-                    Category(
-                      id: 'id3',
-                      name: 'name',
-                      iconPath: AppIcons.scissors,
-                    ),
-                    Category(
-                      id: 'id4',
-                      name: 'name',
-                      iconPath: AppIcons.pomade,
-                    ),
-                    Category(
-                      id: 'id5',
-                      name: 'name',
-                      iconPath: AppIcons.cream,
-                    ),
-                    Category(
-                      id: 'id6',
-                      name: 'name',
-                      iconPath: AppIcons.shampoo,
-                    ),
-                  ],
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const Center(
+                  child: LogoCircle(),
                 ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              if (_isTopInfoAnimationFinished)
+                const SizedBox(
+                  height: 27,
+                ),
                 TopInfoAnimation(
-                  curve: Curves.linear,
-                  child: SubCategoryList(
-                    subCategories: <SubCategory>[
-                      SubCategory(
-                        id: 'id',
-                        text: 'Skin',
+                  child: SearchBar(),
+                ),
+                const SizedBox(
+                  height: 27,
+                ),
+                TopInfoAnimation(
+                  onAnimationFinish: () {
+                    setState(() {
+                      _isTopInfoAnimationFinished = true;
+                    });
+                  },
+                  child: CategoriesView(
+                    categories: <Category>[
+                      Category(
+                        id: 'id1',
+                        name: 'name',
+                        iconPath: AppIcons.earTips,
                       ),
-                      SubCategory(
-                        id: 'id',
-                        text: 'Hair',
+                      Category(
+                        id: 'id2',
+                        name: 'name',
+                        iconPath: AppIcons.pills,
                       ),
-                      SubCategory(
-                        id: 'id',
-                        text: 'Personal care',
+                      Category(
+                        id: 'id3',
+                        name: 'name',
+                        iconPath: AppIcons.scissors,
                       ),
-                      SubCategory(
-                        id: 'id',
-                        text: 'Others',
+                      Category(
+                        id: 'id4',
+                        name: 'name',
+                        iconPath: AppIcons.pomade,
                       ),
-                      SubCategory(
-                        id: 'id',
-                        text: 'test',
+                      Category(
+                        id: 'id5',
+                        name: 'name',
+                        iconPath: AppIcons.cream,
+                      ),
+                      Category(
+                        id: 'id6',
+                        name: 'name',
+                        iconPath: AppIcons.shampoo,
                       ),
                     ],
                   ),
                 ),
-              if (_isTopInfoAnimationFinished)
-                ProductList(
-                  products: <Product>[
-                    Product(
-                      id: 'id1',
-                      name: 'Gentle Skin Cleaner',
-                      volume: 300,
-                      price: 12.29,
-                      images: <String>[
-                        AppImages.skinCleaner,
-                        AppImages.skinCleaner,
-                      ],
-                      description:
-                          'Formulated with pure fermented green tea extract in'
-                          ' lieu of distilled water, TonyMoly Chok Chok Green '
-                          'Tea Watery Cream plovides intense hydration'
-                          'without being sticky or too heavy on skin.',
-                    ),
-                    Product(
-                      id: 'id2',
-                      name: 'Gentle Skin Cleaner',
-                      volume: 300,
-                      price: 12.29,
-                      images: <String>[
-                        AppImages.skinCleaner,
-                        AppImages.skinCleaner,
-                      ],
-                      description:
-                          'Formulated with pure fermented green tea extract in'
-                          ' lieu of distilled water, TonyMoly Chok Chok Green '
-                          'Tea Watery Cream plovides intense hydration'
-                          'without being sticky or too heavy on skin.',
-                    ),
-                    Product(
-                      id: 'id3',
-                      name: 'Gentle Skin Cleaner',
-                      volume: 300,
-                      price: 12.29,
-                      images: <String>[
-                        AppImages.skinCleaner,
-                        AppImages.skinCleaner,
-                      ],
-                      description:
-                          'Formulated with pure fermented green tea extract in'
-                          ' lieu of distilled water, TonyMoly Chok Chok Green '
-                          'Tea Watery Cream plovides intense hydration'
-                          'without being sticky or too heavy on skin.',
-                    ),
-                  ],
+                const SizedBox(
+                  height: 30,
                 ),
-            ],
+                if (_isTopInfoAnimationFinished)
+                  TopInfoAnimation(
+                    curve: Curves.linear,
+                    child: SubCategoryList(
+                      subCategories: <SubCategory>[
+                        SubCategory(
+                          id: 'id',
+                          text: 'Skin',
+                        ),
+                        SubCategory(
+                          id: 'id',
+                          text: 'Hair',
+                        ),
+                        SubCategory(
+                          id: 'id',
+                          text: 'Personal care',
+                        ),
+                        SubCategory(
+                          id: 'id',
+                          text: 'Others',
+                        ),
+                        SubCategory(
+                          id: 'id',
+                          text: 'test',
+                        ),
+                      ],
+                    ),
+                  ),
+                if (_isTopInfoAnimationFinished)
+                  ProductList(
+                    products: <Product>[
+                      Product(
+                        id: 'id1',
+                        name: 'Gentle Skin Cleaner',
+                        volume: 300,
+                        price: 12.29,
+                        images: <String>[
+                          AppImages.skinCleaner,
+                          AppImages.skinCleaner,
+                        ],
+                        description:
+                            'Formulated with pure fermented green tea extract in'
+                            ' lieu of distilled water, TonyMoly Chok Chok Green '
+                            'Tea Watery Cream plovides intense hydration'
+                            'without being sticky or too heavy on skin.',
+                      ),
+                      Product(
+                        id: 'id2',
+                        name: 'Gentle Skin Cleaner',
+                        volume: 300,
+                        price: 12.29,
+                        images: <String>[
+                          AppImages.skinCleaner,
+                          AppImages.skinCleaner,
+                        ],
+                        description:
+                            'Formulated with pure fermented green tea extract in'
+                            ' lieu of distilled water, TonyMoly Chok Chok Green '
+                            'Tea Watery Cream plovides intense hydration'
+                            'without being sticky or too heavy on skin.',
+                      ),
+                      Product(
+                        id: 'id3',
+                        name: 'Gentle Skin Cleaner',
+                        volume: 300,
+                        price: 12.29,
+                        images: <String>[
+                          AppImages.skinCleaner,
+                          AppImages.skinCleaner,
+                        ],
+                        description:
+                            'Formulated with pure fermented green tea extract in'
+                            ' lieu of distilled water, TonyMoly Chok Chok Green '
+                            'Tea Watery Cream plovides intense hydration'
+                            'without being sticky or too heavy on skin.',
+                      ),
+                    ],
+                  ),
+              ],
+            ),
           ),
         ),
       ),
