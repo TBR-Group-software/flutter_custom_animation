@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_custom_animation/presentation/theme/icons.dart';
 import 'package:flutter_custom_animation/presentation/theme/text_styles.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchBar extends StatelessWidget {
@@ -23,11 +23,11 @@ class SearchBar extends StatelessWidget {
           const SizedBox(
             width: 18,
           ),
-          Expanded(
+          const Expanded(
             child: TextField(
               minLines: 1,
-              maxLines: 1,
               decoration: InputDecoration(
+                contentPadding: EdgeInsets.only(bottom: 10),
                 border: InputBorder.none,
                 hintText: 'Search products',
                 hintStyle: AppTextStyles.playfairDisplay22RegularGray,
