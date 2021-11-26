@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_custom_animation/presentation/page/home/page.dart';
 import 'package:flutter_custom_animation/presentation/page/splash/page.dart';
+import 'package:flutter_custom_animation/presentation/theme/palette.dart';
+import 'package:flutter_custom_animation/presentation/utils/material_color_from_color.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,19 +31,10 @@ class BeautySalonApp extends StatelessWidget {
           return MaterialApp(
             title: 'Flutter Demo',
             theme: ThemeData(
-              // This is the theme of your application.
-              //
-              // Try running your application with "flutter run". You'll see the
-              // application has a blue toolbar. Then, without quitting the app, try
-              // changing the primarySwatch below to Colors.green and then invoke
-              // "hot reload" (press "r" in the console where you ran "flutter run",
-              // or simply save your changes to "hot reload" in a Flutter IDE).
-              // Notice that the counter didn't reset back to zero; the application
-              // is not restarted.
-              primarySwatch: Colors.blue,
+              primarySwatch: AppPalette.liteRed.createMaterialColor(),
             ),
             //home: const MyHomePage(title: 'Flutter Demo Home Page'),
-            home: HomePage(),
+            home: const HomePage(),
           );
         }
       },
