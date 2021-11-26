@@ -16,8 +16,10 @@ dependencies:
   auto_animated: 3.0.1
   visibility_detector: 0.2.2
   flutter_native_splash: 1.3.1
+  flutter_keyboard_visibility: 5.1.0
   widgets_visibility_provider: 3.0.1
-  blur: ^3.0.0
+  blur: 3.0.0
+  dotted_border: 2.0.0+1
   get_it: 7.2.0
   salomon_bottom_bar: 3.1.0
 
