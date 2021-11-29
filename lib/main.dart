@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_custom_animation/backbone/dependency_injection.dart'
+    as di;
 import 'package:flutter_custom_animation/presentation/page/home/page.dart';
 import 'package:flutter_custom_animation/presentation/page/splash/page.dart';
 import 'package:flutter_custom_animation/presentation/theme/palette.dart';
@@ -8,16 +10,17 @@ import 'package:flutter_custom_animation/presentation/utils/material_color_from_
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-      overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top]);
-  runApp(const BeautySalonApp());
+      overlays: <SystemUiOverlay>[SystemUiOverlay.bottom, SystemUiOverlay.top]);
+  di.init();
+  runApp(const FlutterCustomAnimationsApp());
 }
 
-class BeautySalonApp extends StatelessWidget {
-  const BeautySalonApp({Key? key}) : super(key: key);
+class FlutterCustomAnimationsApp extends StatelessWidget {
+  const FlutterCustomAnimationsApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // Mock initialization
     return FutureBuilder<dynamic>(
       future: Init.instance.initialize(),
       builder: (_, AsyncSnapshot<dynamic> snapshot) {
@@ -29,11 +32,10 @@ class BeautySalonApp extends StatelessWidget {
         } else {
           // Loading is done, return the app:
           return MaterialApp(
-            title: 'Flutter Demo',
+            title: 'Flutter Custom Animations',
             theme: ThemeData(
               primarySwatch: AppPalette.liteRed.createMaterialColor(),
             ),
-            //home: const MyHomePage(title: 'Flutter Demo Home Page'),
             home: const HomePage(),
           );
         }
