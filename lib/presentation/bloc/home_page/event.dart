@@ -1,12 +1,9 @@
 part of 'bloc.dart';
 
 @immutable
-class HomePageEvent {
-  final HomePageAction action;
+@freezed
+class HomePageEvent with _$HomePageEvent {
+  const HomePageEvent._();
 
-  HomePageEvent.getInitialData() : action = HomePageAction.GetInitialData;
-}
-
-enum HomePageAction {
-  GetInitialData,
+  const factory HomePageEvent.getInitialData() = _GetInitialDataEvent;
 }
