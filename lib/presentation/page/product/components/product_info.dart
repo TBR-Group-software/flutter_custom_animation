@@ -32,7 +32,7 @@ class ProductInfo extends StatelessWidget {
               width: 13,
             ),
             Text(
-              '${product.price.toStringAsFixed(2)} ML',
+              '${product.volume} ML',
               style: AppTextStyles.display15RegularWhite,
             ),
           ],

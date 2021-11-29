@@ -3,6 +3,7 @@ import 'package:flutter_custom_animation/domain/entity/product.dart';
 import 'package:flutter_custom_animation/presentation/page/home/components/product_image.dart';
 import 'package:flutter_custom_animation/presentation/page/home/components/product_top_info.dart';
 import 'package:flutter_custom_animation/presentation/page/product/page.dart';
+import 'package:flutter_custom_animation/presentation/theme/curves.dart';
 import 'package:flutter_custom_animation/presentation/theme/palette.dart';
 import 'package:flutter_custom_animation/presentation/widget/page_route.dart';
 
@@ -32,7 +33,7 @@ class _ProductCardState extends State<ProductCard>
       lowerBound: 0.3,
     );
     _scaleAnimation = _animationController.drive(
-      CurveTween(curve: Curves.easeInOutBack),
+      CurveTween(curve: AppCurves.customCurve),
     );
     _opacityAnimation = _animationController;
     _animationController.forward();

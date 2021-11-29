@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_animation/domain/entity/product.dart';
 import 'package:flutter_custom_animation/presentation/page/product/components/product_image_animation.dart';
 import 'package:flutter_custom_animation/presentation/page/product/components/product_info.dart';
+import 'package:flutter_custom_animation/presentation/theme/curves.dart';
 import 'package:flutter_custom_animation/presentation/theme/palette.dart';
 
 class ProductAnimation extends StatefulWidget {
@@ -20,8 +21,6 @@ class ProductAnimation extends StatefulWidget {
 
 class _ProductAnimationState extends State<ProductAnimation>
     with TickerProviderStateMixin {
-  static const Curve customCurve = Cubic(0.0, 0.0, 0.8, 1.2);
-
   late final AnimationController _topSlideController;
   late final AnimationController _bottomSlideController;
   late final AnimationController _opacityController;
@@ -56,9 +55,9 @@ class _ProductAnimationState extends State<ProductAnimation>
     return Stack(
       children: <Widget>[
         SlideTransition(
-          position: _bottomSlideController.drive(
-              Tween<Offset>(begin: Offset(0, -0.5), end: Offset(0, 0.8))
-                  .chain(CurveTween(curve: customCurve))),
+          position: _bottomSlideController.drive(Tween<Offset>(
+                  begin: const Offset(0, -0.5), end: const Offset(0, 0.8))
+              .chain(CurveTween(curve: AppCurves.customCurve))),
           child: _buildContainer(
             AppPalette.liteRed,
             0.5,
