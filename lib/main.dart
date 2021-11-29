@@ -20,7 +20,7 @@ class FlutterCustomAnimationsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Mock initialization
+    // Mock app initialization
     return FutureBuilder<dynamic>(
       future: Init.instance.initialize(),
       builder: (_, AsyncSnapshot<dynamic> snapshot) {
@@ -36,7 +36,9 @@ class FlutterCustomAnimationsApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: AppPalette.liteRed.createMaterialColor(),
             ),
-            home: const HomePage(),
+            home: HomePage(
+              bloc: di.sl.get(),
+            ),
           );
         }
       },
@@ -46,6 +48,7 @@ class FlutterCustomAnimationsApp extends StatelessWidget {
 
 class Init {
   Init._();
+
   static final Init instance = Init._();
 
   Future<void> initialize() async {
