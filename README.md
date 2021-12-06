@@ -1,16 +1,15 @@
-# flutter_custom_animation
+# Flutter Custom Animations
 
-A new Flutter project.
+This app is about all sorts of the flutter animations.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project includes custom-made animations using standard Flutter tools suc as implicit and explicit animations.
 
-A few resources to get you started if this is your first Flutter project:
+Screenshoots:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+![Alt Text](https://media.giphy.com/media/LYTjVyRbtbipXaCqK7/giphy.gif)
+![Alt Text](https://media.giphy.com/media/hPgrXCKHoXsTrDGxrI/giphy.gif)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Alt Text](https://media.giphy.com/media/DkZaewFclARDB9dI9b/giphy.gif)
+![Alt Text](https://media.giphy.com/media/0riUVW7Ib8t10bO4ts/giphy.gif)
