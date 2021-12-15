@@ -1,4 +1,4 @@
-package com.tbr.beauty_salon_app
+package com.tbr.flutter_custom_animation
 
 import io.flutter.embedding.android.FlutterActivity
 
