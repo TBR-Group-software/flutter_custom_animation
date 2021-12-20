@@ -25,12 +25,6 @@ class _HomePageState extends State<HomePage> {
   bool _isTopInfoAnimationFinished = false;
 
   @override
-  void initState() {
-    super.initState();
-    widget.bloc.add(HomePageEvent.getInitialData());
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppPalette.litePink,
