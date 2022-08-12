@@ -1,8 +1,16 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter_custom_animation/presentation/bloc/status.dart';
 
-class AppBlocState {
+abstract class AppBlocState with EquatableMixin {
   final Object? error;
   final BlocStatus status;
 
-  AppBlocState({required this.status, this.error});
+  const AppBlocState({required this.status, this.error});
+
+
+  @override
+  List<Object?> get props => <Object?>[
+    error,
+    status,
+  ];
 }

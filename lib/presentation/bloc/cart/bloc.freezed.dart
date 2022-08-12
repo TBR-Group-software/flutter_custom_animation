@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'bloc.dart';
@@ -11,19 +12,7 @@ part of 'bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CartEventTearOff {
-  const _$CartEventTearOff();
-
-  _GetCartEvent getCart() {
-    return const _GetCartEvent();
-  }
-}
-
-/// @nodoc
-const $CartEvent = _$CartEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CartEvent {
@@ -77,21 +66,21 @@ class _$CartEventCopyWithImpl<$Res> implements $CartEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GetCartEventCopyWith<$Res> {
-  factory _$GetCartEventCopyWith(
-          _GetCartEvent value, $Res Function(_GetCartEvent) then) =
-      __$GetCartEventCopyWithImpl<$Res>;
+abstract class _$$_GetCartEventCopyWith<$Res> {
+  factory _$$_GetCartEventCopyWith(
+          _$_GetCartEvent value, $Res Function(_$_GetCartEvent) then) =
+      __$$_GetCartEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GetCartEventCopyWithImpl<$Res> extends _$CartEventCopyWithImpl<$Res>
-    implements _$GetCartEventCopyWith<$Res> {
-  __$GetCartEventCopyWithImpl(
-      _GetCartEvent _value, $Res Function(_GetCartEvent) _then)
-      : super(_value, (v) => _then(v as _GetCartEvent));
+class __$$_GetCartEventCopyWithImpl<$Res> extends _$CartEventCopyWithImpl<$Res>
+    implements _$$_GetCartEventCopyWith<$Res> {
+  __$$_GetCartEventCopyWithImpl(
+      _$_GetCartEvent _value, $Res Function(_$_GetCartEvent) _then)
+      : super(_value, (v) => _then(v as _$_GetCartEvent));
 
   @override
-  _GetCartEvent get _value => super._value as _GetCartEvent;
+  _$_GetCartEvent get _value => super._value as _$_GetCartEvent;
 }
 
 /// @nodoc
@@ -107,7 +96,7 @@ class _$_GetCartEvent extends _GetCartEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GetCartEvent);
+        (other.runtimeType == runtimeType && other is _$_GetCartEvent);
   }
 
   @override
