@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'bloc.dart';
@@ -11,19 +12,7 @@ part of 'bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$HomePageEventTearOff {
-  const _$HomePageEventTearOff();
-
-  _GetInitialDataEvent getInitialData() {
-    return const _GetInitialDataEvent();
-  }
-}
-
-/// @nodoc
-const $HomePageEvent = _$HomePageEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$HomePageEvent {
@@ -79,22 +68,22 @@ class _$HomePageEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$GetInitialDataEventCopyWith<$Res> {
-  factory _$GetInitialDataEventCopyWith(_GetInitialDataEvent value,
-          $Res Function(_GetInitialDataEvent) then) =
-      __$GetInitialDataEventCopyWithImpl<$Res>;
+abstract class _$$_GetInitialDataEventCopyWith<$Res> {
+  factory _$$_GetInitialDataEventCopyWith(_$_GetInitialDataEvent value,
+          $Res Function(_$_GetInitialDataEvent) then) =
+      __$$_GetInitialDataEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GetInitialDataEventCopyWithImpl<$Res>
+class __$$_GetInitialDataEventCopyWithImpl<$Res>
     extends _$HomePageEventCopyWithImpl<$Res>
-    implements _$GetInitialDataEventCopyWith<$Res> {
-  __$GetInitialDataEventCopyWithImpl(
-      _GetInitialDataEvent _value, $Res Function(_GetInitialDataEvent) _then)
-      : super(_value, (v) => _then(v as _GetInitialDataEvent));
+    implements _$$_GetInitialDataEventCopyWith<$Res> {
+  __$$_GetInitialDataEventCopyWithImpl(_$_GetInitialDataEvent _value,
+      $Res Function(_$_GetInitialDataEvent) _then)
+      : super(_value, (v) => _then(v as _$_GetInitialDataEvent));
 
   @override
-  _GetInitialDataEvent get _value => super._value as _GetInitialDataEvent;
+  _$_GetInitialDataEvent get _value => super._value as _$_GetInitialDataEvent;
 }
 
 /// @nodoc
@@ -110,7 +99,7 @@ class _$_GetInitialDataEvent extends _GetInitialDataEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GetInitialDataEvent);
+        (other.runtimeType == runtimeType && other is _$_GetInitialDataEvent);
   }
 
   @override
