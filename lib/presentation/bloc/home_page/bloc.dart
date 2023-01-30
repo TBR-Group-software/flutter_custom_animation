@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter_custom_animation/domain/entity/category.dart';
 import 'package:flutter_custom_animation/domain/entity/product.dart';
 import 'package:flutter_custom_animation/domain/entity/sub_category.dart';
@@ -9,7 +9,6 @@ import 'package:flutter_custom_animation/domain/usecase/subcategory/get_all.dart
 import 'package:flutter_custom_animation/presentation/bloc/state.dart';
 import 'package:flutter_custom_animation/presentation/bloc/status.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:meta/meta.dart';
 
 part 'bloc.freezed.dart';
 part 'event.dart';
@@ -24,6 +23,7 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
     this._getAllCategoriesUseCase,
     this._getAllSubcategoriesUseCase,
     this._getAllProductsUseCase,
+      //ignore: prefer_const_constructors
   ) : super(HomePageState(
           status: BlocStatus.Loading,
           categories: <Category>[],
@@ -32,7 +32,11 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
         )) {
     on<_GetInitialDataEvent>(
         (_GetInitialDataEvent event, Emitter<HomePageState> emit) async {
-      await _getInitialData(emit);
+     try {
+       await _getInitialData(emit);
+     } on Object catch (error) {
+       emit(_onError(error));
+     }
     });
   }
 
@@ -49,7 +53,7 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
     ));
   }
 
-  HomePageState _onError(Object? error, StackTrace _) => HomePageState(
+  HomePageState _onError(Object? error) => HomePageState(
       status: BlocStatus.Error,
       subcategories: state.subcategories,
       categories: state.categories,
